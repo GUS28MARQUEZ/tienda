@@ -1,0 +1,153 @@
+<div class="album py-2 bg-light">
+  <div class="container">
+    <div id="product-item" class="row">
+     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-4 box-shadow">
+          <div class="text-center">
+            <img class="card-img-top thumbnail-product" src="img/BATMAN V SUPERMAN DAWN OF JUSTICE.jpg" alt="BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)">
+            <h5 class="card-title">BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)</h5>
+            <p class="card-text">Tras los sucesos de MAN OF STEEL,
+                                 SUPERMAN es visto como un dios para algunos y una amenza para otros,
+                                 De entre esas personas esta BRUCE WAYNE cuya identidad es BATMAN el vigilante de GOTHAM,
+                                 Quiere destruirlo por VENGANZA.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="album py-2 bg-light">
+  <div class="container">
+    <div id="product-item" class="row">
+     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-4 box-shadow">
+          <div class="text-center">
+           <img class="card-img-top thumbnail-product" src="img/SUICIDE SQUAD.jpg" alt="ESCUADRON SUICIDA(2016)">
+           <h5 class="card-title">ESCUADRON SUICIDA(2016)</h5>
+           <p class="card-text">Tras la muerte de SUPERMAN,
+                               una politica llamada AMANDA WALLER,
+                               crea una organizacion llamada agencia X o ESCUADRON SUICIDA,
+                               solo para reemplazar a SUPERMAN,
+                               Pero que ellos no saben es que tienen lidiar con una amenaza mas poderosa que EL KRIPTONEANO.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+        </div>
+        
+<div class="album py-2 bg-light">
+  <div class="container">
+    <div id="product-item" class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="text-center">
+         <img class="card-img-top thumbnail-product" src="img/WONDER WOMAN.jpg" alt="MUJER MARAVILLA(2017)">
+         <h5 class="card-title">MUJER MARAVILLA(2017)</h5>
+          <p class="card-text">Diana vivia con las amazonas y su sueño era ser una guerrera,
+                                 en ese momento conoce a un soldado britanico llamado STEVE TREVOR quien le cuenta sobre la GRAN GUERRA,
+                                 por lo que DIANA teoriza que ARES el dios de la guerra esta detras de todo,
+                                 por lo que ella decide unirse a el para detenerlo.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+<div class="album py-2 bg-light">
+  <div class="container">
+    <div id="product-item" class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+         <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="img/JUSTICE LEAGUE.jpg" alt="LIGA DE LA JUSTCIA(2017)">
+          <h5 class="card-title">LIGA DE LA JUSTICIA(2021)</h5>
+            <p class="card-text">Tras los sucesos de BATMAN V SUPERMAN,
+                                 BRUCE WAYNE(BATMAN) y DIANA PRINCE(WONDER WOMAN) deciden unir a unos superheroes;
+                                 ARTHUR CURRY(AQUAMAN),
+                                 BARRY ALLEN(FLASH),
+                                 VICTOR STONE(CYBORG) para detener a una amenza llamada STEPPENWOLF
+                                 que viene a recolectar las cajas madres para atraer a una amenaza mayor.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+         <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="img/AQUAMAN.jpg" alt="AQUAMAN(2018)">
+          <h5 class="card-title">AQUAMAN(2018)</h5>
+            <p class="card-text">Tras un paceito con la liga,
+                                 ARTHUR tambien conocido como AQUAMAN va hacia ATLANTIS para detener a su hermano ORM quien quiere destruir a la superficie,
+                                 por lo que ARTHUR necesitara la ayuda de MERA y VOLKO.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+         <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="img/FLASH.jpg" alt="FLASH(2018)">
+          <h5 class="card-title">FLASH(2018)</h5>
+            <p class="card-text">Tras estar con la liga,
+                                 BARRY ALLEN tambien conocido como FLASH empieza a investigar sobre el asesinato de su madre,
+                                 En ese momento se da cuenta de que alguien parecido a EL la asesino.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="text-center">
+           <img class="card-img-top thumbnail-product" src="img/GREEN LANTERN CORPS.jpg" alt="CUERPOS DE LINTERNAS VERDES(2019)">
+           <h5 class="card-title">CUERPOS DE LINTERNAS VERDES(2019)</h5>
+            <p class="card-text">HAL JORDAN lidera un grupos de linternas VERDES conformados por;
+                                 JOHN STEWART,
+                                 GUY GARDNER,
+                                 Kyle Rayner,
+                                 Simon Baz,
+                                 Y Jessica Cruz 
+                                 todos estan unidos para detener a una amenaza mayor.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+         <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="img/THE BATMAN.jpg" alt="EL BATMAN(2019)">
+          <h5 class="card-title">EL BATMAN(2019)</h5>
+            <p class="card-text">BATMAN empieza a tener un nuevo enfrentamiento con un nuevo rival,
+                                 DEATHSTROKE quiere matarli por algo que le hiso en el pasado,
+                                 BRUCE empieza a tener problemas psicologicos gracias a SLADE WILSON.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+         <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="img/JUSTICE LEAGUE 2.jpg" alt="LIGA DE LA JUSTCIA II(2020)">
+          <h5 class="card-title">LIGA DE LA JUSTICIA II(2020)</h5>
+            <p class="card-text">tras los sucesos de hace años LEX LUTHOR escapa de ARKHAM y reune 
+                                 a su propio equipo conformado por; BLACK MANTA, OCEAN MASTER, DRA.POISON, CAPITAIN COLD Y RIDDLER
+                                 Para asi entonces encontrar la ecuacion de la ANTI-VIDA y por fin tienen ventaja contra LA LIGA DE LA JUSTICIA.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+         <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="img/JUSTICE LEAGUE 3.jpg" alt="LIGA DE LA JUSTCIA(2021)">
+          <h5 class="card-title">LIGA DE LA JUSTICIA III(2021)</h5>
+           <p class="card-text">5 años despues de la invasion de DARKSIDE;
+                                BATMAN, CYBORG, FLASH, DEADSHOT, DEATHSTROKE, MERA Y JOKER deciden unirse para sobrevivir,
+                                y no ser encontrados por un malvado SUPERMAN pero aun asi BATMAN tenia una idea la pregunta era como.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+
+<form class="d-flex" role="search">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
+
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
