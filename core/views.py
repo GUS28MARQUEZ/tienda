@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render
 from .zpoblar import poblar_bd
 from .models import Producto
+from .forms import IngresarForm
 
 def index(request):
     productos = Producto.objects.all().order_by('nombre')
@@ -29,3 +30,16 @@ def poblar(request):
     # de "Adminstración de usuarios".
     poblar_bd('j.perez@duocuc.cl')
     return redirect(index)
+
+def ingresar(request):
+    form = IngresarForm()
+    
+    if request.method == 'POST':
+        form = IngresarForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            
+    return render(request, 'core/ingresar.html', {
+        'form': IngresarForm(),
+    })        

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index, ManOfSteel, BatmanVSuperman, JusticeLeague
+from .views import index, ManOfSteel, BatmanVSuperman, JusticeLeague, ingresar
 
 # from .views import index, registrarme, nosotros, admin_productos
 # from .views import admin_usuarios, admin_bodega, ventas, boleta, ingresar, admin_usuarios
@@ -12,9 +12,10 @@ from .views import index, ManOfSteel, BatmanVSuperman, JusticeLeague
 urlpatterns = [
     path('', index, name='index'),
     path('index', index, name='index'),
-    path('ManOfSteel/<producto_id>', ManOfSteel, name='ManOfSteel'),
+    path('ManOfSteel/<producto_id', ManOfSteel, name='ManOfSteel'),
     path('BatmanVSuperman/<producto_id>', BatmanVSuperman, name='BatmanVSuperman'),
     path('JusticeLeague/<producto_id>', JusticeLeague, name='JusticeLeague'),
+    path('ingresar', ingresar, name='ingresar'),
     # path('registrarme', registrarme, name='registrarme'),
     # path('nosotros', nosotros, name='nosotros'),
     # path('admin_productos/<accion>/<id>', admin_productos, name='admin_productos'),
@@ -25,8 +26,7 @@ urlpatterns = [
     # path('eliminar_producto_en_bodega/<bodega_id>', eliminar_producto_en_bodega, name='eliminar_producto_en_bodega'),
     # path('ventas', ventas, name='ventas'),
     # path('boleta/<nro_boleta>', boleta, name='boleta'),
-    # path('cambiar_estado_boleta/<nro_boleta>/<estado>', cambiar_estado_boleta, name='cambiar_estado_boleta'),
-    # path('ingresar', ingresar, name='ingresar'),
+    # path('cambiar_estado_boleta/<nro_boleta>/<estado>', cambiar_estado_boleta, name='cambiar_estado_boleta'),    
     # path('misdatos', misdatos, name='misdatos'),
     # path('mipassword', mipassword, name='mipassword'),
     # path('miscompras', miscompras, name='miscompras'),
