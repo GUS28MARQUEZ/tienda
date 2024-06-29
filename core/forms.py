@@ -1,7 +1,7 @@
-from django import forms # type: ignore
-from django.forms import ModelForm, Form # type: ignore
-from django.contrib.auth.models import User # type: ignore
-from django.contrib.auth.forms import UserCreationForm # type: ignore
+from django import forms 
+from django.forms import ModelForm, Form 
+from django.contrib.auth.models import User 
+from django.contrib.auth.forms import UserCreationForm 
 from .models import Categoria, Producto, Bodega, Perfil
 
 class ProductoForm(ModelForm):

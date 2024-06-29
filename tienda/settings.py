@@ -68,7 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'core.context_processors.global_render',
+                'core.context_processors.global_render',
             ],
         },
     },
@@ -89,34 +89,33 @@ DATABASES = {
 }
 
 # CONEXION A BD ORACLE
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.oracle',
-#         'NAME': '127.0.0.1:1521/xe',
-#         'USER': 'c##ttstark',
-#         'PASSWORD': 'ttstark',
-#         'TEST': {
-#             'USER': 'default_test',
-#             'TBLSPACE': 'default_test_tbls',
-#             'TBLSPACE_TMP': 'default_test_tbls_tmp',
-#         },
-#     },
-# }
-
-# CONEXION A BD SQL SERVER
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.oracle',
-#         'NAME': '127.0.0.1:1521/xe',
-#         'USER': 'c##ttstark',
-#         'PASSWORD': 'ttstark',
-#         'TEST': {
-#             'USER': 'default_test',
-#             'TBLSPACE': 'default_test_tbls',
-#             'TBLSPACE_TMP': 'default_test_tbls_tmp',
-#         },
-#     },
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'c##ttstark',
+        'PASSWORD': 'ttstark',
+        'TEST': {
+            'USER': 'default_test',
+            'TBLSPACE': 'default_test_tbls',
+            'TBLSPACE_TMP': 'default_test_tbls_tmp',
+        },
+    },
+}
+#CONEXION A BD SQL SERVER
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'c##ttstark',
+        'PASSWORD': 'ttstark',
+        'TEST': {
+            'USER': 'default_test',
+            'TBLSPACE': 'default_test_tbls',
+            'TBLSPACE_TMP': 'default_test_tbls_tmp',
+        },
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -164,19 +163,19 @@ LOGIN_REDIRECT_URL = '/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CONFIGURACIÓN PARA ENVIAR CORREOS ELECTRÓNICOS A TRAVÉS DEL SERVIDOR DE GMAIL
-# Pasos a seguir:
-# 1. Crear una cuenta de gmail, la mía es: "info.faithfulpet@gmail.com" password "Faith@fulpet@1990"
-# 2. Ir a "Administrar tu cuenta de Google" que se encuentra seleccionando tu foto de perfil
-# 3. Seleccionar la opción "Seguridad" en el menú de la izquierda
-# 4. Activar la verificación en 2 pasos (opción "Teléfonos de la Verificación en 2 pasos")
-# 5. Visitar: https://security.google.com/settings/security/apppasswords
-# 6. Ingresar con tu correo y password de tu cuenta de gmail
-#    En mi caso con la cuenta recién creada "info.faithfulpet@gmail.com" y contraseña "Faith@fulpet@1990"
-# 7. En combobox "Seleccionar app" escoger "Otra (nombre personalizado)" y escibir "faithfulpet" (nombre de mi aplicación)
-# 8. Presionar en botón "Generar"
-# 9. Copiar la password 16 letras que aparece en pantalla y asignarla a la variable "EMAIL_HOST_PASSWORD"
-# 10. Configurar las variables 
+#CONFIGURACIÓN PARA ENVIAR CORREOS ELECTRÓNICOS A TRAVÉS DEL SERVIDOR DE GMAIL
+#Pasos a seguir:
+#1. Crear una cuenta de gmail, la mía es: "info.faithfulpet@gmail.com" password "Faith@fulpet@1990"
+#2. Ir a "Administrar tu cuenta de Google" que se encuentra seleccionando tu foto de perfil
+#3. Seleccionar la opción "Seguridad" en el menú de la izquierda
+#4. Activar la verificación en 2 pasos (opción "Teléfonos de la Verificación en 2 pasos")
+#5. Visitar: https://security.google.com/settings/security/apppasswords
+#6. Ingresar con tu correo y password de tu cuenta de gmail
+#   En mi caso con la cuenta recién creada "info.faithfulpet@gmail.com" y contraseña "Faith@fulpet@1990"
+#7. En combobox "Seleccionar app" escoger "Otra (nombre personalizado)" y escibir "faithfulpet" (nombre de mi aplicación)
+#8. Presionar en botón "Generar"
+#9. Copiar la password 16 letras que aparece en pantalla y asignarla a la variable "EMAIL_HOST_PASSWORD"
+#10. Configurar las variables 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

@@ -1,9 +1,9 @@
-from django.contrib.auth.models import User # type: ignore
-from django.core.validators import MaxValueValidator, MinValueValidator # type: ignore
+from django.contrib.auth.models import User 
+from django.core.validators import MaxValueValidator, MinValueValidator 
 from core.templatetags.custom_filters import formatear_dinero
-from django.db import models # type: ignore
-from django.db.models import Min # type: ignore
-from django.db import connection # type: ignore
+from django.db import models 
+from django.db.models import Min 
+from django.db import connection 
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100, blank=False, null=False, verbose_name='Nombre categoría')
