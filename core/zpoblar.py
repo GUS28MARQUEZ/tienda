@@ -1,6 +1,6 @@
 import sqlite3
-from django.contrib.auth.models import User, Permission
-from django.db import connection
+from django.contrib.auth.models import User, Permission # type: ignore
+from django.db import connection # type: ignore
 from datetime import date, timedelta
 from random import randint
 from core.models import Categoria, Producto, Carrito, Perfil, Boleta, DetalleBoleta, Bodega

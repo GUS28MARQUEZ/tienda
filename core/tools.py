@@ -1,10 +1,10 @@
-from django.core.exceptions import ValidationError
-from django.utils.safestring import SafeString
-from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.password_validation import validate_password
-from django.contrib.auth.models import User
-from django.contrib.auth.validators import UnicodeUsernameValidator
+from django.core.exceptions import ValidationError # type: ignore
+from django.utils.safestring import SafeString # type: ignore
+from django.contrib import messages # type: ignore
+from django.contrib.auth.forms import UserCreationForm # type: ignore
+from django.contrib.auth.password_validation import validate_password # type: ignore
+from django.contrib.auth.models import User # type: ignore
+from django.contrib.auth.validators import UnicodeUsernameValidator # type: ignore
 from .models import Perfil
 from .forms import UsuarioForm, PerfilForm, UsuarioForm
 

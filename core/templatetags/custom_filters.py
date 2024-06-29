@@ -1,6 +1,6 @@
-from django import template
-from django.http import QueryDict
-from django.utils.safestring import SafeString
+from django import template # type: ignore
+from django.http import QueryDict # type: ignore # type: ignore
+from django.utils.safestring import SafeString # type: ignore
 
 register = template.Library()
 

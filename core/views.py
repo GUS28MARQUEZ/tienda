@@ -1,20 +1,20 @@
 from datetime import date
 from .zpoblar import poblar_bd
-from django.http import JsonResponse
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import PasswordChangeForm
-from django.urls import reverse
-from django.utils.safestring import SafeString
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.http import JsonResponse # type: ignore
+from django.shortcuts import render, redirect # type: ignore
+from django.contrib import messages # type: ignore
+from django.contrib.auth import login, logout, authenticate # type: ignore
+from django.contrib.auth.models import User # type: ignore
+from django.contrib.auth.forms import PasswordChangeForm # type: ignore
+from django.urls import reverse # type: ignore
+from django.utils.safestring import SafeString # type: ignore
+from django.contrib.auth.decorators import login_required, user_passes_test # type: ignore
 from .models import Producto, Boleta, Carrito, DetalleBoleta, Bodega, Perfil
 from .forms import ProductoForm, BodegaForm, IngresarForm, UsuarioForm, PerfilForm
 from .forms import RegistroUsuarioForm, RegistroPerfilForm
 from .templatetags.custom_filters import formatear_dinero, formatear_numero
 from .tools import eliminar_registro, verificar_eliminar_registro, show_form_errors
-from django.core.mail import send_mail
+from django.core.mail import send_mail # type: ignore
 
 # Revisar si el usuario es personal de la empresa (staff administrador o superusuario) autenticado y con cuenta activa
 def es_personal_autenticado_y_activo(user):

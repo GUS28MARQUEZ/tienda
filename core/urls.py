@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path # type: ignore
 
 from .views import inicio, registrarme, nosotros, productos
 from .views import usuarios, bodega, ventas, boleta, ingresar, usuarios

@@ -1,7 +1,7 @@
 from .models import Carrito
-from django.contrib.auth.models import User
-from django.contrib import messages
-from django.utils.safestring import SafeString
+from django.contrib.auth.models import User # type: ignore
+from django.contrib import messages # type: ignore
+from django.utils.safestring import SafeString # type: ignore
 from .forms import ProductoForm, BodegaForm, IngresarForm, UsuarioForm, PerfilForm
 
 def obtener_datos_usuario(request):
