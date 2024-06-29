@@ -1,165 +1,102 @@
-// Variables
-const baseDeDatos = [
-    {
-        id: 1,
-        anno: 2013,
-        NombredelProducto: 'EL HOMBRE DE ACERO(2013)',
-        precio: 1000,
-        imagen:'MAN OF STEEL.jpg'
-    },
-    {
-        id: 2,
-        anno: 2016,
-        NombredelProducto: 'BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)',
-        Precio: 1000,
-        imagen:'BATMAN V SUPERMAN DAWN OF JUSTICE.jpg'
-    },
-    {
-        id: 3,
-        anno: 2021,
-        NombredelProducto: 'LIGA DE LA JUSTICIA(2021)',
-        precio: 1000,
-        imagen:'JUSTICE LEAGUE.jpg'
+$(document).ready(function() {
+
+    // Cambiar el texto del combo de categoría por "Seleccione una categoría"
+    var select = document.querySelector('select[name="categoria"]');
+    if (select) {
+        var defaultOption = select.querySelector('option[value=""]');
+        if (defaultOption) {
+            defaultOption.text = "Seleccione una categoría";
+        }
     }
 
-];
+    // Asignar placeholders para ayudar a los usuarios
+    $('#id_nombre').attr('placeholder', 'Ej: EL HOMBRE DE ACERO(2013), BATMAN V SUPERMAN DAWN OF THE JUSTICE(2016), JUSTICE LEAGUE(2021)');
+    $('#id_descripcion').attr('placeholder', 'Ej: Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad, Tras los sucesos de MAN OF STEEL, SUPERMAN es visto como un dios para algunos y una amenza para otros, De entre esas personas esta BRUCE WAYNE cuya identidad es BATMAN el vigilante de GOTHAM Quiere destruirlo por VENGANZA, Tras los sucesos de BATMAN V SUPERMAN, BRUCE WAYNE(BATMAN) y DIANA PRINCE(WONDER WOMAN) deciden unir a unos superheroes ARTHUR CURRY(AQUAMAN) BARRY ALLEN(FLASH) VICTOR STONE(CYBORG) para detener a una amenza llamada STEPPENWOLF que viene a recolectar las cajas madres para atraer a una amenaza mayor');
+    $('#id_precio').attr('placeholder', 'Ej: 1000');
+    $('#id_descuento_subscriptor').attr('placeholder', 'Ej: 10');
+    $('#id_descuento_oferta').attr('placeholder', 'Ej: 5');
 
-let carrito = [];
-const divisa = '$';
-const DOMitems = document.querySelector('#items');
-const DOMcarrito = document.querySelector('#carrito');
-const DOMtotal = document.querySelector('#total');
-const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-
-// Funciones
-
-/**
- * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
- */
-function renderizarProductos() {
-    baseDeDatos.forEach((info) => {
-        // Estructura
-        const miNodo = document.createElement('div');
-        miNodo.classList.add('card', 'col-sm-4');
-        // Body
-        const miNodoCardBody = document.createElement('div');
-        miNodoCardBody.classList.add('card-body');
-        // Titulo
-        const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
-        miNodoTitle.textContent = info.nombre;
-        // Precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `${info.precio}${divisa}`;
-        // Boton
-        const miNodoBoton = document.createElement('button');
-        miNodoBoton.classList.add('btn', 'btn-primary');
-        miNodoBoton.textContent = '+';
-        miNodoBoton.setAttribute('marcador', info.id);
-        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
-        // Insertamos
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoPrecio);
-        miNodoCardBody.appendChild(miNodoBoton);
-        miNodo.appendChild(miNodoCardBody);
-        DOMitems.appendChild(miNodo);
+    // Agregar una validación por defecto para que la imagen la exija como campo obligatorio
+    $.extend($.validator.messages, {
+        required: "Este campo es requerido",
     });
-}
 
-/**
- * Evento para añadir un producto al carrito de la compra
- */
-function anyadirProductoAlCarrito(evento) {
-    // Anyadimos el Nodo a nuestro carrito
-    carrito.push(evento.target.getAttribute('marcador'))
-    // Actualizamos el carrito
-    renderizarCarrito();
+    // Agregar validación para que la suma de los descuentos no supere el 100%
+    $.validator.addMethod('sumaDescuentos', function(value, element) {
+        
+        var descuentoSubscriptor = parseFloat($('#id_descuento_subscriptor').val());
+        var descuentoOferta = parseFloat($('#id_descuento_oferta').val());
+        var sumaDescuentos = descuentoSubscriptor + descuentoOferta;
+        
+        if (isNaN(descuentoSubscriptor) || isNaN(descuentoOferta)) return true;
 
-}
+        return sumaDescuentos <= 100;
 
-/**
- * Dibuja todos los productos guardados en el carrito
- */
-function renderizarCarrito() {
-    // Vaciamos todo el html
-    DOMcarrito.textContent = '';
-    // Quitamos los duplicados
-    const carritoSinDuplicados = [...new Set(carrito)];
-    // Generamos los Nodos a partir de carrito
-    carritoSinDuplicados.forEach((item) => {
-        // Obtenemos el item que necesitamos de la variable base de datos
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            // ¿Coincide las id? Solo puede existir un caso
-            return itemBaseDatos.id === parseInt(item);
-        });
-        // Cuenta el número de veces que se repite el producto
-        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-            return itemId === item ? total += 1 : total;
-        }, 0);
-        // Creamos el nodo del item del carrito
-        const miNodo = document.createElement('li');
-        miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
-        // Boton de borrar
-        const miBoton = document.createElement('button');
-        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-        miBoton.textContent = 'X';
-        miBoton.style.marginLeft = '1rem';
-        miBoton.dataset.item = item;
-        miBoton.addEventListener('click', borrarItemCarrito);
-        // Mezclamos nodos
-        miNodo.appendChild(miBoton);
-        DOMcarrito.appendChild(miNodo);
+    }, 'La suma de los descuentos no puede superar el 100%');
+
+    $('#form').validate({ 
+        rules: {
+            'categoria': {
+                required: true,
+            },
+            'nombre': {
+                required: true,
+            },
+            'descripcion': {
+                required: true,
+            },
+            'precio': {
+                required: true,
+                digits: true,
+                number: true,
+            },
+            'descuento_subscriptor': {
+                required: true,
+                digits: true,
+                number: true,
+                range: [0, 100],
+                sumaDescuentos: true,
+            },
+            'descuento_oferta': {
+                required: true,
+                digits: true,
+                number: true,
+                range: [0, 100],
+                sumaDescuentos: true,
+            },
+        },
+        messages: {
+            'categoria': {
+                required: 'Debe ingresar la categoría del producto',
+            },
+            'nombre': {
+                required: 'Debe ingresar el nombre del producto',
+            },
+            'descripcion': {
+                required: 'Debe ingresar la descripción del producto',
+            },
+            'precio': {
+                required: 'Debe ingresar el precio del producto',
+                number: 'Debe ingresar un número',
+                digits: 'Debe ingresar un número entero',
+            },
+            'descuento_subscriptor': {
+                required: 'Debe ingresar el % de descuento para subscriptores',
+                number: 'Debe ingresar un número',
+                digits: 'Debe ingresar un número entero',
+                range: 'El descuento debe ser un número entre 0 y 100',
+            },
+            'descuento_oferta': {
+                required: 'Debe ingresar el % de descuento para ofertas',
+                number: 'Debe ingresar un número',
+                digits: 'Debe ingresar un número entero',
+                range: 'El descuento debe ser un número entre 0 y 100',
+            },
+        },
+        errorPlacement: function(error, element) {
+            error.insertAfter(element); // Inserta el mensaje de error después del elemento
+            error.addClass('error-message'); // Aplica una clase al mensaje de error
+        },
     });
-    // Renderizamos el precio total en el HTML
-    DOMtotal.textContent = calcularTotal();
-}
 
-/**
- * Evento para borrar un elemento del carrito
- */
-function borrarItemCarrito(evento) {
-    // Obtenemos el producto ID que hay en el boton pulsado
-    const id = evento.target.dataset.item;
-    // Borramos todos los productos
-    carrito = carrito.filter((carritoId) => {
-        return carritoId !== id;
-    });
-    // volvemos a renderizar
-    renderizarCarrito();
-}
-
-/**
- * Calcula el precio total teniendo en cuenta los productos repetidos
- */
-function calcularTotal() {
-    // Recorremos el array del carrito
-    return carrito.reduce((total, item) => {
-        // De cada elemento obtenemos su precio
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
-        });
-        // Los sumamos al total
-        return total + miItem[0].precio;
-    }, 0).toFixed(2);
-}
-
-/**
- * Varia el carrito y vuelve a dibujarlo
- */
-function vaciarCarrito() {
-    // Limpiamos los productos guardados
-    carrito = [];
-    // Renderizamos los cambios
-    renderizarCarrito();
-}
-
-// Eventos
-DOMbotonVaciar.addEventListener('click', vaciarCarrito);
-
-// Inicio
-renderizarProductos();
-renderizarCarrito();
-
+});
