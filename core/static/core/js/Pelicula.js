@@ -4,7 +4,7 @@ $(document).ready(function() {
     // Crear evento de click del boton usando su id #btn-obtener-usuarios
   
       // Crear invocación a la API donde se obtienen los datos
-      $.get('https://freetestapi.com/api/v1/movies', function(data) {
+      $.get('https://www.themoviedb.org/api/v1/movies', function(data) {
            
             alert(data);      
   

@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('#btn-obtener-peliculas').click(function() {
       
       // Crear invocación a la API donde se obtienen los datos
-      $.get('https://www.themealdb.com/api/json/v1/1/categories.php', function(data) {
+      $.get('https://www.themoviedb.org//api/json/v1/1/categories.php', function(data) {
   
         $('#tabla-peliculas-tbody').empty();
   
