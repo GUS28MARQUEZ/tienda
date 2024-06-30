@@ -20,12 +20,6 @@
 
         {% csrf_token %}
 
-        <div class="instrucciones-para-el-alumno">
-            INSTRUCCIONES PARA EL ALUMNO (ELIMINALO DESPUES DE LEERLO):<br>
-            - Pega tu código html del formulario <br>
-            - Si quieres puedes usar los formularios de django de más abajo
-        </div>
-
         {{ form|as_bootstrap_form }}
 
         <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
