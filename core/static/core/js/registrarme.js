@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Asignar placeholders para ayudar a los usuarios
-  $('#id_username').attr('placeholder', 'Ej: STARLIGHTANYA, AraragiKoyomi, TheGoldenWitch, FRIEREN, MadokaKaname, ShinjiIkari, ShoukoKomi, KobayashiLover, YumekoChan');
+  $('#id_username').attr('placeholder', 'Ej: STARLIGHTANYA, AraragiKoyomi, TheGoldenWitch, FRIEREN, MadokaMagica, Shinji2015, KOMI, KobayashiLover, YumekoChan');
   $('#id_first_name').attr('placeholder', 'Ej: ANYA, KOYOMI, BEATRICE, FRIEREN, MADOKA, SHINJI, SHOUKO, TOURHU, YUMEKO');
   $('#id_last_name').attr('placeholder', 'Ej: FORGER, ARARAGI, CASTIGLIONI, FLAMME, KANAME, IKARI, KOMI, KOBAYASHI, JABAMI');
   $('#id_email').attr('placeholder', 'Ej: gmarquez@dc.com');

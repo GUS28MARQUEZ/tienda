@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     // Asignar placeholders para ayudar a los usuarios
     $('#id_nombre').attr('placeholder', 'Ej: EL HOMBRE DE ACERO(2013), BATMAN V SUPERMAN DAWN OF THE JUSTICE(2016), JUSTICE LEAGUE(2021)');
-    $('#id_descripcion').attr('placeholder', 'Ej: Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad, Tras los sucesos de MAN OF STEEL, SUPERMAN es visto como un dios para algunos y una amenza para otros, De entre esas personas esta BRUCE WAYNE cuya identidad es BATMAN el vigilante de GOTHAM Quiere destruirlo por VENGANZA, Tras los sucesos de BATMAN V SUPERMAN, BRUCE WAYNE(BATMAN) y DIANA PRINCE(WONDER WOMAN) deciden unir a unos superheroes ARTHUR CURRY(AQUAMAN) BARRY ALLEN(FLASH) VICTOR STONE(CYBORG) para detener a una amenza llamada STEPPENWOLF que viene a recolectar las cajas madres para atraer a una amenaza mayor');
+    $('#id_descripcion').attr('placeholder', 'Ej: Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton, En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad.');
     $('#id_precio').attr('placeholder', 'Ej: 1000');
     $('#id_descuento_subscriptor').attr('placeholder', 'Ej: 10');
     $('#id_descuento_oferta').attr('placeholder', 'Ej: 5');
