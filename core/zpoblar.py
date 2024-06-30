@@ -204,8 +204,17 @@ def poblar_bd(test_user_email=''):
         subscrito=False,
         imagen='perfiles/TheGoldenWitch.jpg')
     
-
+    categorias_data = [
+        { 'id': 1, 'nombre': 'EL HOMBRE DE ACERO'},
+        { 'id': 2, 'nombre': 'BATMAN V SUPERMAN'},
+        { 'id': 3, 'nombre': 'JUSTICE LEAGUE'},
+    ]
     
+
+    print('Crear categorías')
+    for categoria in categorias_data:
+        Categoria.objects.create(**categoria)
+    print('Categorías creadas correctamente')
 
     productos_data = [
         {
