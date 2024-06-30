@@ -96,7 +96,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=False, 
         es_staff=False, 
         rut='25.747.200-0',	
-        direccion='123 Main Street, Los Angeles, \nCalifornia 90001 \nJapon', 
+        direccion='123 Main Street, Los Angeles, \nNaouetsu 90001 \nJapon', 
         subscrito=True, 
         imagen='perfiles/AraragiKoyomi.jpg')
 
@@ -109,7 +109,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=False, 
         es_staff=False, 
         rut='12.202.357-5', 
-        direccion='Albert Street, New York, \nNew York 10001 \nOstania', 
+        direccion='43 edificio barleix,  \nResidencia FORGER 33 \nOstania', 
         subscrito=True, 
         imagen='perfiles/STARLIGHTANYA.jpg')
 
@@ -122,7 +122,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=False, 
         es_staff=False, 
         rut='11.991.600-3', 
-        direccion='105 Apple Park Way, \nCupertino, CA 95014 \nEstados Unidos', 
+        direccion='100 Residencia komi, \nTokio 69 \nEstados Unidos', 
         subscrito=False, 
         imagen='perfiles/KOMI.jpg')
 
@@ -135,7 +135,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=False, 
         es_staff=False, 
         rut='16.469.725-8', 
-        direccion='350 5th Ave, \nNew York, NY 10118 \nJapon', 
+        direccion='Comfort 17\nTokio 3\nJapon', 
         subscrito=False, 
         imagen='perfiles/Shinji2015.jpg')
 
@@ -147,8 +147,8 @@ def poblar_bd(test_user_email=''):
         correo=test_user_email if test_user_email else 'MadokaMagica@dc.com', 
         es_superusuario=False, 
         es_staff=False, 
-        rut='16.469.725-8', 
-        direccion='350 5th Ave, \nNew York, NY 10118 \nJapon', 
+        rut='38.569.257-9', 
+        direccion='Residencia KANAME \nMitakihara 2011 \nJapon', 
         subscrito=False, 
         imagen='perfiles/MadokaMagica.jpg')
     
@@ -160,8 +160,8 @@ def poblar_bd(test_user_email=''):
         correo=test_user_email if test_user_email else 'YumekoChan@dc.com', 
         es_superusuario=False, 
         es_staff=False, 
-        rut='16.469.725-8', 
-        direccion='350 5th Ave, \nNew York, NY 10118 \nJapon', 
+        rut='69.666.777-2', 
+        direccion='350 jabami \nTokio 45\nJapon', 
         subscrito=False, 
         imagen='perfiles/YumekoChan.jpg')
 
@@ -174,7 +174,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=False, 
         es_staff=True, 
         rut='19.441.980-5', 
-        direccion='10 Pine Road, Miami, \nFlorida 33101 \nJapon', 
+        direccion='Residencia Kobayashi \nTokio 34\nJapon', 
         subscrito=False, 
         imagen='perfiles/KobayashiLover.jpg')
     
@@ -187,7 +187,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=False, 
         es_staff=True, 
         rut='21.708.052-5', 
-        direccion='1600 Pennsylvania Avenue NW, \nWashington, D.C. \nEstados Unidos', 
+        direccion='calle u hogar desconocido \nciudad desconocida \nPais desoncocido', 
         subscrito=False, 
         imagen='perfiles/mruffalo.jpg')
 
@@ -200,7 +200,7 @@ def poblar_bd(test_user_email=''):
         es_superusuario=True,
         es_staff=True,
         rut='13.029.317-4',
-        direccion='15 Oak Street, Los Angeles, \nCalifornia 90001 \nItalia',
+        direccion='mozzarella 35 \nRoma 64\nItalia',
         subscrito=False,
         imagen='perfiles/TheGoldenWitch.jpg')
     
