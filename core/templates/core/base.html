@@ -74,15 +74,37 @@
             <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}"> Inicio </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link active" href="ingresar.html">Iniciar sesión</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="carrito.html">Carrito</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="DatosPersonales.html">Datos personales</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="AdministracionProductos.html">Administracion de Productos</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="MisComprasAnteriores.html">Mis Compras Anteriores</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}"> Nosotros </a>
+      </li>
+
           {% if not user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'registrarme' %}"> Registrarme </a>
+              <a class="nav-link active" aria-current="page" href="{% url 'registro' %}"> Registrarme </a>
             </li>
           {% endif %}
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'nosotros' %}"> Nosotros </a>
-          </li>
+          
 
           {% if user.is_authenticated and user.is_staff and user.is_active or user.is_authenticated and user.is_superuser and user.is_active %}
             <li class="nav-item dropdown">
