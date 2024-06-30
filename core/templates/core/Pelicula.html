@@ -6,12 +6,7 @@
 
   <form id="form" method="POST" enctype="multipart/form-data">
 
-    {% csrf_token %}
-
-    <div class="instrucciones-para-el-alumno">
-      INSTRUCCIONES PARA EL ALUMNO (ELIMINALO DESPUES DE LEERLO):<br>
-      - Construye tu formulario, pero puedes usar los campos sugeridos. <br>
-    </div>
+    {% csrf_token %}>
 
     form.categoria|as_bootstrap_field <br>
     form.nombre|as_bootstrap_field <br>
@@ -54,11 +49,6 @@
   {% if productos %} 
   
   {% endcomment %}
-
-  <div class="instrucciones-para-el-alumno">
-    INSTRUCCIONES PARA EL ALUMNO (ELIMINALO DESPUES DE LEERLO):<br>
-    - Construye tu tabla de productos, pero puedes usar los campos sugeridos. <br>
-  </div>
   
     <table id="tabla-principal" class="table table-hover">
         <thead>
