@@ -270,7 +270,7 @@ def miscompras(request):
     # CREAR: variable de contexto para enviar el historial de compras del cliente
     context = { }
 
-    return render(request, 'core/miscompras.html', context)
+    return render(request, 'core/MisCompras.html', context)
 
 
 # ***********************************************************************
@@ -511,7 +511,7 @@ def cambiar_password(request):
 def enviar_correo_cambio_password(request, user, password):
     try:
         # Revisar "CONFIGURACIÓN PARA ENVIAR CORREOS ELECTRÓNICOS A TRAVÉS DEL SERVIDOR DE GMAIL" en settings.py 
-        subject = 'Cambio de contraseña Sword Games Shop'
+        subject = 'Cambio de contraseña del SNYDERVERSE'
         url_ingresar = request.build_absolute_uri(reverse(ingresar))
         message = render(request, 'common/formato_correo.html', {
             'first_name': user.first_name,

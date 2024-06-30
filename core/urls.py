@@ -17,7 +17,6 @@ from .views import vaciar_carrito, mipassword, cambiar_password, comprar_ahora
 
 urlpatterns = [
     path('inicio', inicio, name='inicio'),
-    path('inicio', inicio, name='inicio'),
     path('registrarme', registrarme, name='registrarme'),
     path('nosotros', nosotros, name='nosotros'),
     path('productos/<accion>/<id>', productos, name='productos'),
