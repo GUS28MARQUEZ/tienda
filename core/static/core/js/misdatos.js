@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('#id_username').attr('placeholder', 'Ej: STARLIGHTANYA, AraragiKoyomi, TheGoldenWitch');
   $('#id_first_name').attr('placeholder', 'Ej: ANYA, KOYOMI, BEATRICE');
   $('#id_last_name').attr('placeholder', 'Ej: FORGER, ARARAGI, CASTIGLIONI');
-  $('#id_email').attr('placeholder', 'Ej: cevans@marvels.com');
+  $('#id_email').attr('placeholder', 'Ej: STARLIGHTANYA@dc.com');
   $('#id_rut').attr('placeholder', 'Ej: 11111111-1 (sin puntos y con guión)');
   $('#id_direccion').attr('placeholder', 'Calle, n° casa o edificio, n° departamento o piso\n'
     + 'localidad o ciudad, código postal o de área\n'
