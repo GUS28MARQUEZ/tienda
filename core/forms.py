@@ -2,12 +2,12 @@ from django import forms
 from django.forms import ModelForm, Form 
 from django.contrib.auth.models import User 
 from django.contrib.auth.forms import UserCreationForm 
-from .models import Categoria, Producto, bodega, Perfil
+from .models import Categoria, Producto, Bodega, Perfil
 
 class ProductoForm(ModelForm):
     class Meta:
         model = Producto
-        fields = '_all_'
+        fields = '__all__'
         widgets = {
             'descripcion':forms.Textarea(),
             'imagen': forms.FileInput(attrs={'class': 'd-none'})        
@@ -51,3 +51,8 @@ class PerfilForm(ModelForm):
     class Meta:
         model = Perfil
         fields = '__all__'         
+
+class BodegaForm(ModelForm):
+    class Meta:
+        model = Bodega
+        fields = '__all__'                
