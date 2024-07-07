@@ -55,48 +55,48 @@ def inicio(request):
     
     return render(request, 'core/inicio.html', context)
 
-def index(request):
-
-    if request.method == 'POST':
-        # Si la vista fue invocada con un POST es porque el usuario presionó el botón "Buscar" en la página principal.
-        # Por lo anterior, se va a recuperar palabra clave del formulario que es el campo "buscar" (id="buscar"), 
-        # que se encuentra en la página Base.html. El formulario de búsqueda se encuentra bajo el comentario 
-        # "FORMULARIO DE BUSQUEDA" en la página Base.html.
-        buscar = request.POST.get('buscar')
-
-        # Se filtrarán todos los productos que contengan la palabra clave en el campo nombre
-        registros = Producto.objects.filter(nombre__icontains=buscar).order_by('nombre')
-    
-    if request.method == 'GET':
-        # Si la vista fue invocada con un GET, se devolverán todos los productos a la PAGINA
-        registros = Producto.objects.all().order_by('nombre')
-
-    # Como los productos tienen varios cálculos de descuentos por ofertas y subscripción, estos se realizarán
-    # en una función a parte llamada "obtener_info_producto", mediante la cuál se devolverán las filas de los
-    # productos, pero con campos nuevos donde los cálculos ya han sido realizados.
-    productos = []
-    for registro in registros:
-        productos.append(obtener_info_producto(registro.id))
-
-    context = { 'productos': productos }
-    
-    return render(request, 'core/index.html', context)
+#def index(request):
+#
+#    if request.method == 'POST':
+#        # Si la vista fue invocada con un POST es porque el usuario presionó el botón "Buscar" en la página principal.
+#        # Por lo anterior, se va a recuperar palabra clave del formulario que es el campo "buscar" (id="buscar"), 
+#        # que se encuentra en la página Base.html. El formulario de búsqueda se encuentra bajo el comentario 
+#        # "FORMULARIO DE BUSQUEDA" en la página Base.html.
+#        buscar = request.POST.get('buscar')
+#
+#        # Se filtrarán todos los productos que contengan la palabra clave en el campo nombre
+#        registros = Producto.objects.filter(nombre__icontains=buscar).order_by('nombre')
+#    
+#    if request.method == 'GET':
+#        # Si la vista fue invocada con un GET, se devolverán todos los productos a la PAGINA
+#        registros = Producto.objects.all().order_by('nombre')
+#
+#    # Como los productos tienen varios cálculos de descuentos por ofertas y subscripción, estos se realizarán
+#    # en una función a parte llamada "obtener_info_producto", mediante la cuál se devolverán las filas de los
+#    # productos, pero con campos nuevos donde los cálculos ya han sido realizados.
+#    productos = []
+#    for registro in registros:
+#        productos.append(obtener_info_producto(registro.id))
+#
+#    context = { 'productos': productos }
+#    
+#    return render(request, 'core/index.html', context)
 
 def ficha(request, producto_id):
     context = obtener_info_producto(producto_id)
     return render(request, 'core/ficha.html', context)
 
-def ManOfSteel(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/ManOfSteel.html', context)
-
-def BatmanVSuperman(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/BatmanVSuperman.html', context)
-
-def JusticeLeague(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/JusticeLeague.html', context)
+#def ManOfSteel(request, producto_id):
+#    context = obtener_info_producto(producto_id)
+#    return render(request, 'core/ManOfSteel.html', context)
+#
+#def BatmanVSuperman(request, producto_id):
+#    context = obtener_info_producto(producto_id)
+#    return render(request, 'core/BatmanVSuperman.html', context)
+#
+#def JusticeLeague(request, producto_id):
+#    context = obtener_info_producto(producto_id)
+#    return render(request, 'core/JusticeLeague.html', context)
 
 def nosotros(request):
     # CREAR: renderización de página

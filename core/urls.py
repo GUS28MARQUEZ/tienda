@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import inicio, index,registrarme, nosotros, productos
 from .views import usuarios, bodega, ventas, boleta, ingresar, usuarios
-from .views import misdatos, miscompras, salir, carrito, ficha, ManOfSteel, BatmanVSuperman, JusticeLeague
+from .views import misdatos, miscompras, salir, carrito, ficha#, ManOfSteel, BatmanVSuperman, JusticeLeague
 from .views import cambiar_estado_boleta, poblar, obtener_productos, eliminar_producto_en_bodega
 from .views import premio, eliminar_producto_en_carrito, agregar_producto_al_carrito
 from .views import vaciar_carrito, mipassword, cambiar_password, comprar_ahora
@@ -17,7 +17,7 @@ from .views import vaciar_carrito, mipassword, cambiar_password, comprar_ahora
 
 urlpatterns = [
     path('inicio', inicio, name='inicio'),
-     path('index', index, name='index'),
+    #path('index', index, name='index'),
     path('registrarme', registrarme, name='registrarme'),
     path('nosotros', nosotros, name='nosotros'),
     path('productos/<accion>/<id>', productos, name='productos'),
@@ -39,9 +39,9 @@ urlpatterns = [
     path('vaciar_carrito', vaciar_carrito, name='vaciar_carrito'),
     path('agregar_producto_al_carrito/<producto_id>', agregar_producto_al_carrito, name='agregar_producto_al_carrito'),
     path('ficha/<producto_id>', ficha, name='ficha'),
-    path('ficha/<producto_id>', ManOfSteel, name='ManOfSteel'),
-    path('ficha/<producto_id>', BatmanVSuperman, name='BatmanVSuperman'),
-    path('ficha/<producto_id>', JusticeLeague, name='JusticeLeague'),
+    #path('ficha/<producto_id>', ManOfSteel, name='ManOfSteel'),
+    #path('ficha/<producto_id>', BatmanVSuperman, name='BatmanVSuperman'),
+    #path('ficha/<producto_id>', JusticeLeague, name='JusticeLeague'),
     path('comprar_ahora', comprar_ahora, name='comprar_ahora'),
     path('premio', premio, name='premio'),
     path('poblar', poblar, name='poblar'),
