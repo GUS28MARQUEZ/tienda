@@ -189,7 +189,7 @@ def poblar_bd(test_user_email=''):
         rut='21.708.052-5', 
         direccion='calle u hogar desconocido \nciudad desconocida \nPais desoncocido', 
         subscrito=False, 
-        imagen='perfiles/mruffalo.jpg')
+        imagen='perfiles/FRIEREN.jpg')
 
     crear_usuario(
         username='TheGolgenWitch',

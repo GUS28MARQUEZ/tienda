@@ -19,7 +19,7 @@
         "args": ["runserver"],
         "django": true,
         "justMyCode": true,
-        "os": "windows"
+        "os": "windows" 
       }
     ]
   }
