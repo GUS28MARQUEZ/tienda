@@ -481,8 +481,8 @@ def agregar_producto_al_carrito(request, producto_id):
         precio_a_pagar=precio_a_pagar
     )
 
-    return redirect(ficha, producto_id)
-
+    return redirect(ManOfSteel, producto_id)   
+    
 @user_passes_test(es_cliente_autenticado_y_activo)
 def eliminar_producto_en_carrito(request, carrito_id):
     Carrito.objects.get(id=carrito_id).delete()
