@@ -82,9 +82,9 @@ def index(request):
     
     return render(request, 'core/index.html', context)
 
-#def ficha(request, producto_id):
-#    context = obtener_info_producto(producto_id)
-#    return render(request, 'core/ficha.html', context)
+def ficha(request, producto_id):
+    context = obtener_info_producto(producto_id)
+    return render(request, 'core/ficha.html', context)
 
 def ManOfSteel(request, producto_id):
     context = obtener_info_producto(producto_id)
@@ -481,7 +481,7 @@ def agregar_producto_al_carrito(request, producto_id):
         precio_a_pagar=precio_a_pagar
     )
 
-    return redirect(ManOfSteel, producto_id)   
+    return redirect(ficha, producto_id)   
     
 @user_passes_test(es_cliente_autenticado_y_activo)
 def eliminar_producto_en_carrito(request, carrito_id):
