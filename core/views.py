@@ -82,9 +82,9 @@ def index(request):
     
     return render(request, 'core/index.html', context)
 
-def ficha(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/ficha.html', context)
+#def ficha(request, producto_id):
+#    context = obtener_info_producto(producto_id)
+#    return render(request, 'core/ficha.html', context)
 
 def ManOfSteel(request, producto_id):
     context = obtener_info_producto(producto_id)
