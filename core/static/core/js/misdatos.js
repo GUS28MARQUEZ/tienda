@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-  // Asignar placeholders para ayudar a los usuarios
   $('#id_username').attr('placeholder', 'Ej: STARLIGHTANYA, AraragiKoyomi, TheGoldenWitch');
   $('#id_first_name').attr('placeholder', 'Ej: ANYA, KOYOMI, BEATRICE');
   $('#id_last_name').attr('placeholder', 'Ej: FORGER, ARARAGI, CASTIGLIONI');
@@ -10,7 +9,6 @@ $(document).ready(function() {
     + 'localidad o ciudad, código postal o de área\n'
     + 'estado o provincia, ciudad, país');
 
-  // Agregar una validación por defecto para que la imagen la exija como campo obligatorio
   $.extend($.validator.messages, {
     required: "Este campo es requerido",
   });
@@ -65,8 +63,8 @@ $(document).ready(function() {
         },
       },
       errorPlacement: function(error, element) {
-        error.insertAfter(element); // Inserta el mensaje de error después del elemento
-        error.addClass('error-message'); // Aplica una clase al mensaje de error
+        error.insertAfter(element); 
+        error.addClass('error-message');
       },
   });
 

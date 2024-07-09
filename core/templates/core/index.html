@@ -1,129 +1,76 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UNIVERSO DC de ZACK SNYDER">
-    <meta name="author" content="UN FAN DE ZACK SNYDER">
-    <link rel="icon" href="{%static 'core/img/JL.ico'%}">
-    <title>SNYDERVERSE</title>
-    <link rel="stylesheet" href="{%static 'core/css/style.css'%}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+
+{% block content %}
+<h1>SNYDERVERSE</h1>
+
+  <div id="carouselExampleCaptions" class="carousel slide">
+
+<main role="main">
+
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="container">
+        <section class="text-center">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{%static 'core/img/carrusel1'%}" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{%static 'core/img/carrusel2'%}" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{%static 'core/img/carrusel3.jpg'%}" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+        </section>
+    </div>
+  </div>
+</main>
+  </head>
+<body>
+  
 
  <div id="menu"></div>
 
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-      <img class="logo" src="img/logo_dc.png" style="height: 30px; margin-right: 10px;" alt="DC">
-    <a class="navbar-brand" href="index.html">SNYDERVERSE</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="registro.html">Registrarse</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="ingresar.html">Iniciar sesión</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="carrito.html">Carrito</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="DatosPersonales.html">Datos personales</a>
-        </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="AdministracionProductos.html">Administracion de Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="MisComprasAnteriores.html">Mis Compras Anteriores</a>
-      </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-  <main role="main">
-      <div class="container">
-          <section class="text-center">
-              <div id="carouselExample" class="carousel slide">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="{%static 'core/img/a045a71796eb5d1b29a04126b1f03033.jpg'%}" class="d-block w-100" alt="">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{%static 'core/img/wallhaven-lqj9wp.jpg'%}" class="d-block w-100" alt="">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{%static 'core/img/HD-wallpaper-aquaman-barry-allen-batman-cyborg-flash-justice-league-superman-wonder-woman-zack-snyder-s-justice-league.jpg'%}" class="d-block w-100" alt="">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                  </button>
-                </div>
-          </section>
-      </div>
-  </main>
+ 
 
   <!--productos de la tienda-->
   <div class="container-fluid">
-    <div id="mini-product" class="row">
-      
-      <div id="articulo_producto" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card mb-4 box-shadow">
+    <div id="productos" class="row">
+      {% for producto in productos %}
+      <div id="a{{ producto.id }}" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card pt-2 box-shadow"style="width: 18rem;"> 
           <div class="text-center">
-            <img class="card-img-top thumbnail-product" src="{%static 'core/img/MAN OF STEEL.jpg'%}" alt="EL HOMBRE DE ACERO(2013)">
-            <h5 class="card-title">EL HOMBRE DE ACERO(2013)</h5>
-            <p class="card-text"> Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton,
-                              En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN,
-                              tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad.</p>
-            <a href="ManOfSteel.html" class="btn btn-primary">ver ficha</a>
+            <img class="card-img-top thumbnail-product" src="/media/{{ productos.imagen }}" alt="EL HOMBRE DE ACERO(2013)">
+            <h5 class="card-title">{{ producto.nombre }} </h5>
+            <p class="card-text"> {{ producto.descripcion}}</p>
+            <a href="{% url 'ficha' producto.id %}" class="btn btn-primary">ver ficha</a>
           </div>
         </div>
       </div>
-              
-      <div id="articulo_producto" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card mb-4 box-shadow">
-          <div class="text-center">
-            <img class="card-img-top thumbnail-product" src="{%static 'core/img/BATMAN V SUPERMAN DAWN OF JUSTICE.jpg'%}" alt="BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)">
-                <h5 class="card-title">BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)</h5>
-                <p class="card-text">Tras los sucesos de MAN OF STEEL,
-                                  SUPERMAN es visto como un dios para algunos y una amenza para otros,
-                                  De entre esas personas esta BRUCE WAYNE cuya identidad es BATMAN el vigilante de GOTHAM,
-                                  Quiere destruirlo por VENGANZA.</p>
-                <a href="BatmanVSuperman.html" class="btn btn-primary">ver ficha</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="articulo_producto" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card mb-4 box-shadow">
-          <div class="text-center">
-            <img class="card-img-top thumbnail-product" src="{%static 'core/img/JUSTICE LEAGUE.jpg'%}" alt="LIGA DE LA JUSTCIA(2021)">
-                <h5 class="card-title">LIGA DE LA JUSTICIA(2021)</h5>
-                <p class="card-text">Tras los sucesos de BATMAN V SUPERMAN, BRUCE WAYNE(BATMAN) y DIANA
-                                  PRINCE(WONDER WOMAN) deciden unir a unos superheroes; ARTHUR CURRY(AQUAMAN),
-                                  BARRY ALLEN(FLASH), VICTOR STONE(CYBORG) para detener a una amenza llamada
-                                  STEPPENWOLF que viene a recolectar las cajas madres para atraer a una amenaza
-                                  mayor.</p>
-                <a href="JusticeLeague.html" class="btn btn-primary">ver ficha</a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
   
@@ -142,7 +89,9 @@
 </footer>
   
 
-  <script src="{%static 'core/js/script.js'%}"></script>
+  <script src="static/core/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
+{% endblock content %}

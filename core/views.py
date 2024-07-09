@@ -16,64 +16,25 @@ from .templatetags.custom_filters import formatear_dinero, formatear_numero
 from .tools import eliminar_registro, verificar_eliminar_registro, show_form_errors
 from django.core.mail import send_mail 
 
-# Revisar si el usuario es personal de la empresa (staff administrador o superusuario) autenticado y con cuenta activa
 def es_personal_autenticado_y_activo(user):
     return (user.is_staff or user.is_superuser) and user.is_authenticated and user.is_active
 
-# Revisar si el usuario no está autenticado, es decir, si aún está navegando como usuario anónimo
 def es_usuario_anonimo(user):
     return user.is_anonymous
 
-# Revisar si el usuario es un cliente (no es personal de la empresa) autenticado y con cuenta activa
 def es_cliente_autenticado_y_activo(user):
     return (not user.is_staff and not user.is_superuser) and user.is_authenticated and user.is_active
-
-def inicio(request):
-
-    if request.method == 'POST':
-        # Si la vista fue invocada con un POST es porque el usuario presionó el botón "Buscar" en la página principal.
-        # Por lo anterior, se va a recuperar palabra clave del formulario que es el campo "buscar" (id="buscar"), 
-        # que se encuentra en la página Base.html. El formulario de búsqueda se encuentra bajo el comentario 
-        # "FORMULARIO DE BUSQUEDA" en la página Base.html.
-        buscar = request.POST.get('buscar')
-
-        # Se filtrarán todos los productos que contengan la palabra clave en el campo nombre
-        registros = Producto.objects.filter(nombre__icontains=buscar).order_by('nombre')
-    
-    if request.method == 'GET':
-        # Si la vista fue invocada con un GET, se devolverán todos los productos a la PAGINA
-        registros = Producto.objects.all().order_by('nombre')
-
-    # Como los productos tienen varios cálculos de descuentos por ofertas y subscripción, estos se realizarán
-    # en una función a parte llamada "obtener_info_producto", mediante la cuál se devolverán las filas de los
-    # productos, pero con campos nuevos donde los cálculos ya han sido realizados.
-    productos = []
-    for registro in registros:
-        productos.append(obtener_info_producto(registro.id))
-
-    context = { 'productos': productos }
-    
-    return render(request, 'core/inicio.html', context)
 
 def index(request):
 
     if request.method == 'POST':
-        # Si la vista fue invocada con un POST es porque el usuario presionó el botón "Buscar" en la página principal.
-        # Por lo anterior, se va a recuperar palabra clave del formulario que es el campo "buscar" (id="buscar"), 
-        # que se encuentra en la página Base.html. El formulario de búsqueda se encuentra bajo el comentario 
-        # "FORMULARIO DE BUSQUEDA" en la página Base.html.
         buscar = request.POST.get('buscar')
 
-        # Se filtrarán todos los productos que contengan la palabra clave en el campo nombre
         registros = Producto.objects.filter(nombre__icontains=buscar).order_by('nombre')
     
     if request.method == 'GET':
-        # Si la vista fue invocada con un GET, se devolverán todos los productos a la PAGINA
         registros = Producto.objects.all().order_by('nombre')
 
-    # Como los productos tienen varios cálculos de descuentos por ofertas y subscripción, estos se realizarán
-    # en una función a parte llamada "obtener_info_producto", mediante la cuál se devolverán las filas de los
-    # productos, pero con campos nuevos donde los cálculos ya han sido realizados.
     productos = []
     for registro in registros:
         productos.append(obtener_info_producto(registro.id))
@@ -86,26 +47,13 @@ def ficha(request, producto_id):
     context = obtener_info_producto(producto_id)
     return render(request, 'core/ficha.html', context)
 
-def ManOfSteel(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/ManOfSteel.html', context)
-
-def BatmanVSuperman(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/BatmanVSuperman.html', context)
-
-def JusticeLeague(request, producto_id):
-    context = obtener_info_producto(producto_id)
-    return render(request, 'core/JusticeLeague.html', context)
-
 def nosotros(request):
-    # CREAR: renderización de página
     return render(request, 'core/nosotros.html')
 
 def premio(request):
     return render(request, 'core/premio.html')
 
-@user_passes_test(es_usuario_anonimo, login_url='inicio')
+@user_passes_test(es_usuario_anonimo, login_url='index')
 def ingresar(request):
 
     if request.method == "POST":
@@ -118,7 +66,7 @@ def ingresar(request):
                 if user.is_active:
                     login(request, user)
                     messages.success(request, f'¡Bienvenido(a) {user.first_name} {user.last_name}!')
-                    return redirect(inicio)
+                    return redirect(index)
                 else:
                     messages.error(request, 'La cuenta está desactivada.')
             else:
@@ -144,25 +92,19 @@ def salir(request):
     apellido = request.user.last_name
     messages.success(request, f'¡Hasta pronto {nombre} {apellido}!')
     logout(request)
-    return redirect(inicio)
+    return redirect(index)
 
 @user_passes_test(es_usuario_anonimo)
 def registrarme(request):
     
     if request.method == 'POST':
-        
-        # CREAR: usar RegistroUsuarioForm para obtener datos del formulario
-        # CREAR: usar RegistroPerfilForm para obtener datos del formulario
-        # CREAR: lógica para crear usuario
+
         pass
     
     if request.method == 'GET':
 
-        # CREAR: un formulario RegistroUsuarioForm vacío
-        # CREAR: un formulario RegistroPerfilForm vacío
         pass
 
-    # CREAR: variable de contexto para enviar formulario de usuario y perfil
     context = { }
 
     return render(request, 'core/registrarme.html', context)
@@ -428,7 +370,7 @@ def calcular_precios_producto(producto):
 
 def comprar_ahora(request):
     messages.error(request, f'El pago aún no ha sido implementado.')
-    return redirect(inicio)
+    return redirect(index)
 
 @user_passes_test(es_cliente_autenticado_y_activo)
 def carrito(request):
@@ -454,7 +396,7 @@ def agregar_producto_al_carrito(request, producto_id):
 
     if es_personal_autenticado_y_activo(request.user):
         messages.error(request, f'Para poder comprar debes tener cuenta de Cliente, pero tu cuenta es de {request.user.perfil.tipo_usuario}.')
-        return redirect(inicio)
+        return redirect(index)
     elif es_usuario_anonimo(request.user):
         messages.info(request, 'Para poder comprar, primero debes registrarte como cliente.')
         return redirect(registrarme)
@@ -576,4 +518,4 @@ def poblar(request):
     # del sistema puedan probar el cambio de password de los usuarios, en la página
     # de "Adminstración de usuarios".
     poblar_bd('cri.gomezv@profesor.duoc.cl')
-    return redirect(inicio)        
+    return redirect(index)        

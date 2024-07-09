@@ -5,6 +5,8 @@ $(document).ready(function() {
   
       // Crear invocación a la API donde se obtienen los datos
       $.get('https://www.themoviedb.org/api/v1/movies', function(data) {
+
+        $('#fila-pelicula').empty();
            
             alert(data);      
   
@@ -29,7 +31,7 @@ $(document).ready(function() {
                             ${item.description}
                         </p>
                         <a class="btn btn-primary" target="_blank"
-                            href="https://www.max.com/cl/es/channel/dc.${item.title}">
+                            href="https://dcuniverseseries.blogspot.com/2019/07/peliculas-dc-online-espanol-latino.html= ${item.title}">
                             Buscar en MAX
                         </a>
                     </div>

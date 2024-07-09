@@ -3,45 +3,29 @@
 {% load custom_filters %}
 
 {% block content %}
-
   <form id="form" method="POST" enctype="multipart/form-data">
-
     {% csrf_token %}
-
     form.categoria|as_bootstrap_field <br>
     form.nombre|as_bootstrap_field <br>
     form.descripcion|as_bootstrap_field <br>
 
     form.precio|as_bootstrap_field <br>
     form.descuento_subscriptor|as_bootstrap_field  <br>
-    form.descuento_oferta|as_bootstrap_field  <br>
-
-    <!-- AREA DE CUADRO DE IMAGEN: Imagen del producto (VER COMENTARIO "CUADRO DE IMAGEN" en script.js) -->
+    form.descuento_oferta|as_bootstrap_field  <br>    
     {% if form.imagen.value %}
       <img id="cuadro-imagen" src="/media/{{ form.imagen.value }}">
     {% else %}
       <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
-    {% endif %}
-    
+    {% endif %}    
     {{ form.imagen|as_bootstrap_field }}
-
-
-    <!-- AREA DE BOTONES -->
     <div class="mt-2 mb-3 text-center">
-
       <input class="btn btn-primary" type="submit" value="Guardar">
-
       <a class="btn btn-primary" href="{% url 'productos' 'crear' '0' %}"> Nuevo </a>
-
-      <!-- AREA DE BOTON DE SELECCIONAR IMAGEN: Reemplaza el botón "Seleccionar archivo" por otro con Bootstrap (VER COMENTARIO "BOTON IMAGEN" en script.js) -->
     <button class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('id_imagen').click();"> Seleccionar imagen </button>  
-
       {% if form.instance.id %}
         <a class="btn btn-primary"  href="{% url 'productos' 'eliminar' form.instance.id %}"> Eliminar </a>
       {% endif %}
-
     </div>
-
   </form>
 
   {% comment %} 
@@ -66,8 +50,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for producto in productos %}
-                
+            {% for producto in productos %}                
               producto.id
               producto.categoria
               producto.nombre
