@@ -1,10 +1,15 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block content %}
-<h1>SNYDERVERSE</h1>
+    {% block stylesheet %}
+      
+    {% endblock stylesheet %}
+    {% block script-head %}
+      
+    {% endblock script-head %}
 
-  <div id="carouselExampleCaptions" class="carousel slide">
+{% block content %}
+
 
 <main role="main">
 
@@ -14,6 +19,8 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
+
     <div class="container">
         <section class="text-center">
             <div id="carouselExample" class="carousel slide">
@@ -47,16 +54,13 @@
     </div>
   </div>
 </main>
-  </head>
-<body>
-  
 
- <div id="menu"></div>
 
 
  
 
   <!--productos de la tienda-->
+  
   <div class="container-fluid">
     <div id="productos" class="row">
       {% for producto in productos %}
@@ -73,25 +77,52 @@
       {% endfor %}
     </div>
   </div>
-  
-  <footer id="footer">
-    <div class="width-25">
-      <h2 class="quicklink-heading">Contáctanos</h2>
-      <ul class="get-in-touch">
-        <li><i class="fa fa-envelope-o" aria-hidden="true"></i> E-MAIL:<a href="#" class="footer-e-mail"> snyderverse@gmail.com</a></li>
-        <li><i class="fa fa-headphones" aria-hidden="true"></i> WHATS-APP: +56987654321</li>
-        <li><i class="fa fa-globe" aria-hidden="true"></i> PÁGINA:<a href="#" class="footer-website"> https://www.snyderverse.com</a></li>
-      </ul>
-    </div>
-    <div class="width-100 footer2-bacbor">
-     <p class="footer2-content">Copyright © 2023, DC COMICS & WARNER BROS Todos los derechos reservados</p>
-    </div>
-</footer>
-  
 
-  <script src="static/core/js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+  <div class="container-fluid">
+    <div id="mini-product" class="row">
+      
+      <div id="articulo_producto" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-4 box-shadow">
+          <div class="text-center">
+            <img class="card-img-top thumbnail-product" src="img/MAN OF STEEL.jpg" alt="EL HOMBRE DE ACERO(2013)">
+            <h5 class="card-title">EL HOMBRE DE ACERO(2013)</h5>
+            <p class="card-text"> Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton,
+                              En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN,
+                              tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad.</p>
+            <a href="ManOfSteel.html" class="btn btn-primary">ver ficha</a>
+          </div>
+        </div>
+      </div>
+              
+      <div id="articulo_producto" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-4 box-shadow">
+          <div class="text-center">
+            <img class="card-img-top thumbnail-product" src="img/BATMAN V SUPERMAN DAWN OF JUSTICE.jpg" alt="BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)">
+                <h5 class="card-title">BATMAN V SUPERMAN EL ORIGEN DE LA JUSTICIA(2016)</h5>
+                <p class="card-text">Tras los sucesos de MAN OF STEEL,
+                                  SUPERMAN es visto como un dios para algunos y una amenza para otros,
+                                  De entre esas personas esta BRUCE WAYNE cuya identidad es BATMAN el vigilante de GOTHAM,
+                                  Quiere destruirlo por VENGANZA.</p>
+                <a href="BatmanVSuperman.html" class="btn btn-primary">ver ficha</a>
+          </div>
+        </div>
+      </div>
 
+      <div id="articulo_producto" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-4 box-shadow">
+          <div class="text-center">
+            <img class="card-img-top thumbnail-product" src="img/JUSTICE LEAGUE.jpg" alt="LIGA DE LA JUSTCIA(2021)">
+                <h5 class="card-title">LIGA DE LA JUSTICIA(2021)</h5>
+                <p class="card-text">Tras los sucesos de BATMAN V SUPERMAN, BRUCE WAYNE(BATMAN) y DIANA
+                                  PRINCE(WONDER WOMAN) deciden unir a unos superheroes; ARTHUR CURRY(AQUAMAN),
+                                  BARRY ALLEN(FLASH), VICTOR STONE(CYBORG) para detener a una amenza llamada
+                                  STEPPENWOLF que viene a recolectar las cajas madres para atraer a una amenaza
+                                  mayor.</p>
+                <a href="JusticeLeague.html" class="btn btn-primary">ver ficha</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  
 {% endblock content %}

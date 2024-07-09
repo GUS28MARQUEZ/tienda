@@ -43,6 +43,9 @@ def index(request):
     
     return render(request, 'core/index.html', context)
 
+def administrar(request):
+    return render(request, 'core/administrar.html')
+
 def ficha(request, producto_id):
     context = obtener_info_producto(producto_id)
     return render(request, 'core/ficha.html', context)

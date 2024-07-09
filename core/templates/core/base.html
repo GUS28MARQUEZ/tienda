@@ -100,19 +100,19 @@
           </li>
           {% endif %}
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'DatosPersonales' %}">Datos personales</a>
+            <a class="nav-link active" href="{% url 'misdatos' %}">Datos personales</a>
           </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'AdministracionProductos' %}">Administracion de Productos</a>
+              <a class="nav-link active" href="{% url 'administrar' %}">Administrar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'MisComprasAnteriores' %}">Mis Compras Anteriores</a>
+            <a class="nav-link active" href="{% url 'miscompras' %}">Mis Compras Anteriores</a>
         </li>
         </ul>      
         <a href="{% url 'premio' %}">
           <img src="{% static 'core/img/oferta.png' %}" style="height: 38px; margin-right: 10px;" alt="">
         </a>
-        <form method="post" action="{% url 'inicio' %}" class="d-flex" role="search">
+        <form method="post" action="{% url 'index' %}" class="d-flex" role="search">
           {% csrf_token %}
           <input class="form-control me-2" type="search" placeholder="Buscar productos" 
               aria-label="Search" id="buscar" id="buscar" name="buscar">
