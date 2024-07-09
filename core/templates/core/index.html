@@ -61,22 +61,22 @@
 
   <!--productos de la tienda-->
   
-  <div class="container-fluid">
-    <div id="productos" class="row">
-      {% for producto in productos %}
-      <div id="a{{ producto.id }}" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-        <div class="card pt-2 box-shadow"style="width: 18rem;"> 
-          <div class="text-center">
-            <img class="card-img-top thumbnail-product" src="/media/{{ productos.imagen }}" alt="EL HOMBRE DE ACERO(2013)">
-            <h5 class="card-title">{{ producto.nombre }} </h5>
-            <p class="card-text"> {{ producto.descripcion}}</p>
-            <a href="{% url 'ficha' producto.id %}" class="btn btn-primary">ver ficha</a>
-          </div>
+<div class="container-fluid">
+<div id="productos" class="row">
+    {% for producto in productos %}
+    <div id="a{{ producto.id }}" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+      <div class="card pt-2 box-shadow"style="width: 18rem;"> 
+        <div class="text-center">
+          <img class="card-img-top thumbnail-product" src="/media/{{ productos.imagen }}" alt="EL HOMBRE DE ACERO(2013)">
+          <h5 class="card-title">{{ producto.nombre }} </h5>
+          <p class="card-text"> {{ producto.descripcion}}</p>
+          <a href="{% url 'ficha' producto.id %}" class="btn btn-primary">ver ficha</a>
         </div>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
+</div>
 
   <div class="container-fluid">
     <div id="mini-product" class="row">
