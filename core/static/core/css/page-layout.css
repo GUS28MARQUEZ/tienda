@@ -1,6 +1,6 @@
 
 
-
+/*
 .pagelayout-1, 
 .pagelayout-2,
 .pagelayout-3,
@@ -42,3 +42,4 @@
 .pagelayout-4::before { content: "Página base (invisible) - área de scripts compartidos por todas las páginas"; }
 .pagelayout-5::before { content: "Página base (invisible) - área de scripts personalizados para cada pagina"; }
 .pagelayout-6::before { content: "Página base (invisible) - script para mostrar mensajes emergentes en SweetAlert2"; }
+*/

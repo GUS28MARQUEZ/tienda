@@ -85,7 +85,7 @@
                 <li><a class="dropdown-item" href="{% url 'misdatos' %}"> Mis datos </a></li>
                 <li><a class="dropdown-item" href="{% url 'mipassword' %}"> Cambiar mi contraseña </a></li>
                 {% if not user.is_staff and not user.is_superuser %}
-                  <li><a class="dropdown-item" href="{% url 'MisCompras' %}"> Mis compras </a></li>
+                  <li><a class="dropdown-item" href="{% url 'miscompras' %}"> Mis compras </a></li>
                 {% endif %}
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{% url 'salir' %}"> Salir </a></li>
@@ -150,24 +150,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="{% static 'core/js/script.js' %}"></script>
-
-    <div class="instrucciones-para-el-alumno">
-      {% static 'core/js/validador.js' %}
-      {% static 'core/js/usuario.js' %}
-      {% static 'core/js/script.js' %}
-      {% static 'core/js/ropa.js' %}
-      {% static 'core/js/registrarme.js' %}
-      {% static 'core/js/producto.js' %}
-      {% static 'core/js/Pelicula.js' %}
-      {% static 'core/js/obtener_pelicula.js' %}
-      {% static 'core/js/misdatos.js' %}
-      {% static 'core/js/mipassword.js' %}
-      {% static 'core/js/ingresar.js' %}
-      {% static 'core/js/ficha.js' %}
-      {% static 'core/js/bodega.js' %}
-      {% static 'core/js/api_rest.js' %}
-      :<br>
-    </div>
+  </div>
 
   <div class="pagelayout-5">
     {% block script %}
@@ -175,7 +158,7 @@
     {% endblock script %}
   </div>
 
-   <div class="pagelayout-6">
+  <div class="pagelayout-6">
     {% include 'common/mostrar_mensajes.html' %}
   </div>
 </body>

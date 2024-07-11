@@ -221,7 +221,7 @@ def poblar_bd(test_user_email=''):
             'id': 1,
             'categoria': Categoria.objects.get(id=1),
             'nombre': 'EL HOMBRE DE ACERO(2013)',
-            'descripcion': 'Ej: Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad, Tras los sucesos de MAN OF STEEL.',
+            'descripcion': 'Clark Kent se entera de que es un alienígena con superpoderes procedente del planeta Krypton, En ese momento decide asumir el papel de protector de la raza humana como SUPERMAN, tomando la decisión de enfrentarse al general Zod y evitar que destruya la humanidad.',
             'precio': 1000,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
@@ -257,8 +257,8 @@ def poblar_bd(test_user_email=''):
     print('Crear carritos')
     for rut in ['25.747.200-0', '11.991.600-3']:
         cliente = Perfil.objects.get(rut=rut)
-        for cantidad_productos in range(1, 11):
-            producto = Producto.objects.get(pk=randint(1, 10))
+        for cantidad_productos in range(1, 3):
+            producto = Producto.objects.get(pk=randint(1, 3))
             if cliente.subscrito:
                 descuento_subscriptor = producto.descuento_subscriptor
             else:
@@ -314,7 +314,7 @@ def poblar_bd(test_user_email=''):
             detalle_boleta = []
             total_a_pagar = 0
             for cant_productos in range(1, randint(4, 6)):
-                producto_id = randint(1, 10)
+                producto_id = randint(1, 3)
                 producto = Producto.objects.get(id=producto_id)
                 precio = producto.precio
                 descuento_subscriptor = 0
@@ -349,7 +349,7 @@ def poblar_bd(test_user_email=''):
     print('Boletas creadas correctamente')
 
     print('Agregar productos a bodega')
-    for producto_id in range(1, 11):
+    for producto_id in range(1, 3):
         producto = Producto.objects.get(id=producto_id)
         cantidad = 0
         for cantidad in range(1, randint(2, 31)):

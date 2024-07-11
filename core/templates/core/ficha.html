@@ -10,6 +10,7 @@
         {% csrf_token %}
 
         <div>
+            <img src="/media/{{ imagen }}" style="width: 520px;">
         {{ imagen }} <br>
         {{ nombre }} <br>
         {{ html_estado|safe }}  <br>

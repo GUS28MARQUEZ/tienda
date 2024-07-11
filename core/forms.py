@@ -34,14 +34,22 @@ class IngresarForm(Form):
 class RegistroUsuarioForm(UserCreationForm):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        labels = {
+            'email':'E-mail'
+            }
 
 
 class RegistroPerfilForm(ModelForm):
     class Meta:
         model = Perfil
-        fields = '__all__'
-
+        fields = ['rut', 'direccion', 'subscrito', 'imagen']
+        exclude = ['tipo_usuario']
+        widgets = {
+            'direccion': forms.Textarea(),
+            'imagen': forms.FileInput(),
+        }
+ 
 class UsuarioForm(ModelForm):
    class Meta:
         model = User

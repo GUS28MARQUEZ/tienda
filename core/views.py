@@ -72,7 +72,7 @@ def ingresar(request):
                     return redirect(index)
                 else:
                     messages.error(request, 'La cuenta está desactivada.')
-            else:
+            else:        
                 messages.error(request, 'La cuenta o la password no son correctos')
         else:
             messages.error(request, 'No se pudo ingresar al sistema')
