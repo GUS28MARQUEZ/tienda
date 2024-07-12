@@ -4,8 +4,9 @@
 
 {% block content %}
 
+   <h1>Completa los datos para crear tu cuenta de cliente</h1>
 
-  <form id="form" method="POST" enctype="multipart/form-data">
+  <form id="form" method="POST" enctype="multipart/form-data" style="display: none">
 
     {% csrf_token %}
     
@@ -13,16 +14,12 @@
 
       <!-- AREA DE DATOS BASICOS: username, nombre, apellidos, correo y contraseñas -->
       <div class="col-sm-12 col-md-4">
-
-        form_usuario|as_bootstrap_form:'help_text_visible=False'
-
+        {{ form_usuario|as_bootstrap_form:'help_text_visible=False' }}
       </div>
 
       <!-- AREA DE DATOS DE PERFIL: rut, dirección y subscrito (VER COMENTARIO "CHECKBOX SUBSCRITO" en script.js)  -->
       <div class="col-sm-12 col-md-5">
-
-        form_perfil|as_bootstrap_form
-
+        {{ form_perfil|as_bootstrap_form }}
       </div>
 
       <!-- AREA DE IMAGEN DE PERFIL -->

@@ -72,3 +72,7 @@ label {
     color: red;
     font-weight: bolder;
 }
+
+div{
+    border:1px solid blue;
+}

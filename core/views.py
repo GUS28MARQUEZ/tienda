@@ -102,13 +102,33 @@ def registrarme(request):
     
     if request.method == 'POST':
 
-        pass
+       form_usuario = RegistroUsuarioForm()
+       form_perfil = RegistroPerfilForm()
+       
+       if form_usuario.is_valid() and form_perfil.is_valid():
+           usuario = form_usuario.save(commit=False)
+           usuario.is_staff = False
+           perfil = form_perfil.save(commit=False)
+           usuario.save()
+           perfil.usuario_id = usuario.id
+           perfil.tipo_usuario = 'Cliente'
+           perfil.save()
+           #premium = 'y aprovechar tus descuentos especiales como cliente PREMIUM'if.perfil.subscrito
+           mensaje = f'Tu cuenta de usuario: "{usuario.username}" ha sido creada con exito.'
+           messages.success(request, mensaje)
+           return redirect(ingresar)
+       else:
+           messages.error(request, f'No fue posible crear tu cuenta del cliente.')
     
     if request.method == 'GET':
+     
+        form_usuario = RegistroUsuarioForm(request.POST)
+        form_perfil = RegistroPerfilForm(request.POST, request.FILES)
 
-        pass
-
-    context = { }
+    context = { 
+               'form_usuario': form_usuario,
+               'form_perfil': form_perfil,
+               }
 
     return render(request, 'core/registrarme.html', context)
 
@@ -158,16 +178,40 @@ def productos(request, accion, id):
     
     if request.method == 'POST':
         
-        # CREAR: lógica para crear y actualizar un producto
-        pass
+        if request.method == 'POST':
+
+          if accion == 'crear':
+              form = ProductoForm(request.POST, request.FILES)
+        
+        elif accion == 'actualizar':
+            form = ProductoForm(request.POST, request.FILES, instance=Producto.objects.get(id=id))
+            
+        if form.is_valid():
+            producto = form.save()
+            ProductoForm(instance=producto)
+            messages.success(request, f'El producto "{str(producto)}" se logro {accion} correctamente')    
+            return redirect(productos, 'actualizar', producto.id)
+        else:
+            show_form_errors
 
     if request.method == 'GET':
 
-        # CREAR: lógica para preparar la página para la acción de: crear, actualizar y eliminar un producto
+        if accion == 'actualizar':
+            form = ProductoForm(instance=Producto.objects.get(id=id))
+        
+        elif accion == 'eliminar':
+            eliminado, mensaje = eliminar_registro(Producto, id)
+            messages.success(request, mensaje)
+            if eliminado:
+                return redirect(productos, 'crear', '0')
+            form = ProductoForm(instance=Producto.objects.get(id=id))
         pass
 
     # CREAR: variable de contexto para enviar el formulario y todos los productos
-    context = { }
+    context = { 
+        'form': form,
+        'productos': Producto.object.all()       
+               }
 
     return render(request, 'core/productos.html', context)
 
@@ -201,10 +245,7 @@ def usuarios(request, accion, id):
 @user_passes_test(es_personal_autenticado_y_activo)
 def bodega(request):
 
-    if request.method == 'POST':
-
-        # CREAR: acciones para agregar productos a la bodega
-        pass
+    pass
 
     registros = Bodega.objects.all()
     lista = []
